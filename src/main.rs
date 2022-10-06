@@ -41,4 +41,10 @@ macro_rules! bin_tree {
     () => {
         BinaryTree::Nil
     };
+impl<T> BinaryTree<T> {
+    /// self の Node または Nil を、to(Self)に置き換える。
+    /// to は self に組み込まれる形で move される。
+    pub fn replace(&mut self, to: Self) {
+        *self = to;
+    }
 }
